@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://di38u116chnki"]
+
+[ext_resource type="Script" uid="uid://d35gk7fijxmtx" path="res://script/base/multi_loader.gd" id="1_y72tk"]
+
+[node name="multiloader" type="Node"]
+script = ExtResource("1_y72tk")

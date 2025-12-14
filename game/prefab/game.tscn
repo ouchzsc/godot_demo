@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://vyssb8howihr"]
+
+[ext_resource type="Script" uid="uid://pafvqm2y227s" path="res://script/base/game.gd" id="1_h2ikw"]
+[ext_resource type="PackedScene" uid="uid://bx7wae1k32rru" path="res://prefab/res.tscn" id="2_dcgfx"]
+[ext_resource type="Script" uid="uid://bggg32rg33i5w" path="res://script/base/events.gd" id="3_hxbpc"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_h2ikw")
+
+[node name="Res" parent="." instance=ExtResource("2_dcgfx")]
+
+[node name="Events" type="Node" parent="."]
+script = ExtResource("3_hxbpc")
