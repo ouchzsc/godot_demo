@@ -39,17 +39,18 @@ func start(
 				if _finished == _total:
 					if all_done.is_valid():
 						all_done.call(_success, _results, _param)
-					set_process(false),
+					cancel(),
 			Callable(),
 			param
 		)
 		_loaders.append(loader)
 
-func dispose() -> void:
+func cancel() -> void:
 	if _canceled:
 		return
 	_canceled = true
 	for l in _loaders:
-		l.dispose()
+		l.cancel()
 	_loaders.clear()
+	set_process(false)
 	queue_free()

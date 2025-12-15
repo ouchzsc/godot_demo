@@ -7,13 +7,15 @@ func _ready() -> void:
 	loader = game.res.load("res://ui/PanelStart.tscn",loaddone)
 	game.events.click_start.connect(onclick)
 
-func loaddone(ok,res:PackedScene,_param):
-	var obj = res.instantiate()
-	add_child(obj)
+func loaddone(res:PackedScene,_param):
+	add_child(res.instantiate())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func onclick():
-	loader.free()
+	game.res.load("res://level/test.tscn",onTestLoadDone)
+
+func onTestLoadDone(res:PackedScene,_param):
+	get_tree().change_scene_to_packed(res)

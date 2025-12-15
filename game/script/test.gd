@@ -10,7 +10,7 @@ func _ready() -> void:
 		"res://ui/PanelStart.tscn"],singleDone,allDone)
 
 func onclick():
-	mloader.dispose()
+	mloader.cancel()
 
 func singleDone(_i, _res, _param):
 	print(_res)	

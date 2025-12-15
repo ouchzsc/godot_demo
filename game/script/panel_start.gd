@@ -3,6 +3,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$ButtonStart.pressed.connect(click_start)
+	$ButtonExit.pressed.connect(click_exit)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -11,3 +12,6 @@ func _process(_delta: float) -> void:
 func click_start():
 	print("start")
 	game.events.click_start.emit()
+
+func click_exit():
+	queue_free()

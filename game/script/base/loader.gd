@@ -16,7 +16,6 @@ var _param
 
 var _state: State = State.IDLE
 var _progress: float = 0.0
-var _result = null #记一个引用，这样可以不释放资源
 var progress: Array = []
 	
 func start(
@@ -31,7 +30,6 @@ func start(
 	_param = param
 	_state = State.LOADING
 	_progress = 0.0
-	_result = null
 	ResourceLoader.load_threaded_request(_res_id)
 
 func _process(_delta: float) -> void:
@@ -59,12 +57,11 @@ func _finish(res) -> void:
 	set_process(false)
 	_state = State.SUCCEEDED if res!=null else State.FAILED
 	_progress = 1.0
-	_result = res
-
 	if _done_cb.is_valid():
 		_done_cb.call(res, _param)
+	cancel()
 
-func dispose() -> void:
+func cancel() -> void:
 	if _state == State.LOADING:
 		_state = State.CANCELLED
 	set_process(false)
