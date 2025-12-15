@@ -1,9 +1,5 @@
 extends Node
 class_name MultiLoader
-
-signal single_done(res_id: String, ok: bool, res: Resource)
-signal all_done(ok: bool, results: Dictionary)
-
 var _total := 0
 var _finished := 0
 var _success := true
@@ -13,59 +9,47 @@ var _canceled := false
 
 func start(
 	res_ids: Array[String],
-	single_done_cb: Callable = Callable(),
-	all_done_cb: Callable = Callable(),
+	single_done: Callable,
+	all_done: Callable,
 	param = null
 ) -> void:
 	_total = res_ids.size()
 
 	if _total == 0:
-		if all_done_cb.is_valid():
-			all_done_cb.call(true, {})
+		if all_done.is_valid():
+			all_done.call(true, {})
 		queue_free()
 		return
 
-	if single_done_cb.is_valid():
-		single_done.connect(single_done_cb)
-
-	if all_done_cb.is_valid():
-		all_done.connect(all_done_cb)
-
-	for res_id in res_ids:
+	for i in range(res_ids.size()):
+		var index := i
+		var res_id = res_ids[index]
 		var loader = game.res.load(
 			res_id,
-			func(ok, res, _param):
+			func(res, _param):
 				if _canceled:
 					return
-
 				_finished += 1
-
-				if ok:
-					_results[res_id] = res
+				if res!=null:
+					_results[index] = res
 				else:
 					_success = false
-
-				single_done.emit(res_id, ok, res)
-
+				if single_done.is_valid():
+					single_done.call(index, res, _param)
 				if _finished == _total:
-					all_done.emit(_success, _results)
-					queue_free(),
+					if all_done.is_valid():
+						all_done.call(_success, _results, _param)
+					set_process(false),
 			Callable(),
 			param
 		)
-
 		_loaders.append(loader)
 
-func free() -> void:
+func dispose() -> void:
+	if _canceled:
+		return
 	_canceled = true
-
 	for l in _loaders:
-		if is_instance_valid(l):
-			l.queue_free()
-
+		l.dispose()
 	_loaders.clear()
 	queue_free()
-
-func _exit_tree():
-	# 保证外部直接 queue_free() 也能正确清理
-	free()

@@ -1,25 +1,29 @@
 extends Node
-
+var mloader:MultiLoader
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	game.events.click_start.connect(onclick)
 	game.res.load("res://ui/PanelStart.tscn",loaddone) # Replace with function body.
-	game.res.load_multi([
+	mloader = game.res.load_multi([
 		"res://ui/PanelStart.tscn",
 		"res://ui/PanelStart.tscn"],singleDone,allDone)
 
-func singleDone(res_id: String, ok: bool, res: Resource):
-	pass	
+func onclick():
+	mloader.dispose()
 
-func allDone(ok,res):
-	for k in res:
-		print(k, res[k])
+func singleDone(_i, _res, _param):
+	print(_res)	
+
+func allDone(_success, res, _param):
+	print(res[0]==res[1])
 	
 	
-func loaddone(ok,res:PackedScene,_param):
-	var obj = res.instantiate()
+func loaddone(_res:PackedScene,_param):
+	var obj = _res.instantiate()
 	add_child(obj)
+	print(_res)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
