@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dukk87rnov3oq"]
 
-[ext_resource type="Script" uid="uid://bbgigb0fk2fta" path="res://script/panel_start.gd" id="1_nm8ro"]
+[ext_resource type="Script" uid="uid://6ld577fnqkrv" path="res://script/ui/panel_start.gd" id="1_yhtww"]
 
 [node name="PanelStart" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nm8ro")
+script = ExtResource("1_yhtww")
 metadata/_edit_group_ = true
 
 [node name="ButtonStart" type="Button" parent="."]
