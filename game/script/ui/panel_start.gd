@@ -10,8 +10,8 @@ func _process(_delta: float) -> void:
 	pass
 
 func click_start():
-	print("start")
-	game.events.click_start.emit()
+	game.scene_mgr.load("res://level/test.tscn")
+	queue_free()
 
 func click_exit():
-	queue_free()
+	get_tree().quit()
