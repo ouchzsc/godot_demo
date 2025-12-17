@@ -1,0 +1,21 @@
+{
+    "godotTools.editorPath.godot4": "/Applications/Godot.app",
+    "files.exclude": {
+        "**/*.import": true,
+        "**/*.uid": true,
+        ".godot/": true,
+        ".mono/": true
+    },
+    "search.exclude": {
+        "**/*.import": true,
+        "**/*.uid": true,
+        ".godot/": true,
+        ".mono/": true
+    },
+    "files.watcherExclude": {
+        "**/*.import": true,
+        "**/*.uid": true,
+        ".godot/": true,
+        ".mono/": true
+    }
+}
