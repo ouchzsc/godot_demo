@@ -6,3 +6,6 @@ func load(path: String):
 	var uiPrefab: PackedScene = loader.asset
 	var uiNode = uiPrefab.instantiate()
 	add_child.call_deferred(uiNode)
+
+func loadRes(res: Resource):
+	add_child(res.instantiate())

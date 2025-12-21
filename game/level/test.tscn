@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cil2vjwrmwraf"]
+[gd_scene load_steps=3 format=3 uid="uid://cil2vjwrmwraf"]
 
 [ext_resource type="Script" uid="uid://b4re6rlax8bcf" path="res://script/scene/test.gd" id="1_dlp0f"]
+[ext_resource type="PackedScene" uid="uid://dgprbfgdg1vyl" path="res://prefab/popmart.tscn" id="2_8abgs"]
 
 [node name="Test" type="Node"]
 script = ExtResource("1_dlp0f")
+
+[node name="popmart" parent="." instance=ExtResource("2_8abgs")]
+position = Vector2(475, 13.999939)
+scale = Vector2(0.7, 0.7)
