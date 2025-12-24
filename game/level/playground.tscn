@@ -1,8 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dinis4sfqx66q"]
+[gd_scene load_steps=9 format=3 uid="uid://dinis4sfqx66q"]
 
+[ext_resource type="Texture2D" uid="uid://cvxa0vcqaaotj" path="res://image/white.png" id="1_1bhv4"]
 [ext_resource type="PackedScene" uid="uid://bva3kjbyey4ve" path="res://prefab/Player.tscn" id="1_x0rnm"]
+[ext_resource type="Texture2D" uid="uid://b26axhwr6cvd2" path="res://image/light/light_stream.jpg" id="3_nm44g"]
+
+[sub_resource type="Gradient" id="Gradient_nm44g"]
+colors = PackedColorArray(0.28402406, 0.4697929, 0.6268059, 1, 0.6025796, 0.7978335, 0.8572728, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qgpxp"]
+gradient = SubResource("Gradient_nm44g")
+fill_from = Vector2(0.4722222, 0)
+fill_to = Vector2(0.51282054, 1)
 
 [sub_resource type="Gradient" id="Gradient_7swuj"]
+offsets = PackedFloat32Array(0, 0.375, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.14038461, 0.14038461, 0.14038461, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_x0rnm"]
 gradient = SubResource("Gradient_7swuj")
@@ -14,9 +26,89 @@ size = Vector2(64, 64)
 
 [node name="Playground" type="Node2D"]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(854, 556)
+color = Color(0.6052743, 0.6052743, 0.6052743, 1)
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(1023, 1095)
+scale = Vector2(44.061478, 82.15058)
+texture = SubResource("GradientTexture2D_qgpxp")
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.6, 0.6)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Parallax2D3"]
+modulate = Color(0.33270404, 0.41718754, 0.38886046, 1)
+position = Vector2(1278, 974)
+rotation = -0.049560413
+scale = Vector2(0.2760417, 3.708357)
+texture = ExtResource("1_1bhv4")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Parallax2D3"]
+modulate = Color(0.33270404, 0.41718754, 0.38886046, 1)
+position = Vector2(1797.9999, 1141)
+rotation = 0.04395067
+scale = Vector2(0.37304676, 7.374273)
+texture = ExtResource("1_1bhv4")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Parallax2D3"]
+modulate = Color(0.33270404, 0.41718754, 0.38886046, 1)
+position = Vector2(69, 1002.00006)
+rotation = -0.035414584
+scale = Vector2(0.73697907, 7.779362)
+texture = ExtResource("1_1bhv4")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Parallax2D3"]
+modulate = Color(0.33270404, 0.41718754, 0.38886046, 1)
+position = Vector2(382.00024, 854)
+rotation = -0.049560413
+scale = Vector2(0.50000054, 4.0147843)
+texture = ExtResource("1_1bhv4")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Parallax2D3"]
+modulate = Color(0.33270404, 0.41718754, 0.38886046, 1)
+position = Vector2(1569.9998, 846.9998)
+rotation = 0.041162185
+scale = Vector2(0.20117132, 4.7062635)
+texture = ExtResource("1_1bhv4")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Parallax2D2"]
+modulate = Color(0.14509805, 0.19215687, 0.1764706, 1)
+position = Vector2(109.99994, 882.9999)
+scale = Vector2(0.2760417, 3.708357)
+texture = ExtResource("1_1bhv4")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Parallax2D2"]
+modulate = Color(0.14509805, 0.19215687, 0.1764706, 1)
+position = Vector2(473.62497, 1156.755)
+scale = Vector2(0.37304676, 7.374273)
+texture = ExtResource("1_1bhv4")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Parallax2D2"]
+modulate = Color(0.14509805, 0.19215687, 0.1764706, 1)
+position = Vector2(987.99994, 1271)
+scale = Vector2(0.73697907, 7.779362)
+texture = ExtResource("1_1bhv4")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Parallax2D2"]
+modulate = Color(0.14509805, 0.19215687, 0.1764706, 1)
+position = Vector2(1814, 1229.9998)
+scale = Vector2(0.50000054, 4.0147843)
+texture = ExtResource("1_1bhv4")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Parallax2D2"]
+modulate = Color(0.14509805, 0.19215687, 0.1764706, 1)
+position = Vector2(1416, 1490.0001)
+scale = Vector2(0.20117132, 4.7062635)
+texture = ExtResource("1_1bhv4")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(971, 1003.75)
-scale = Vector2(31.28125, 2.554687)
+position = Vector2(1028.0001, 1380)
+scale = Vector2(44.25, 12.687498)
 texture = SubResource("GradientTexture2D_x0rnm")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
@@ -24,5 +116,140 @@ texture = SubResource("GradientTexture2D_x0rnm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
 shape = SubResource("RectangleShape2D_1bhv4")
 
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.30138955, 0.30138952, 0.30138952, 1)
+position = Vector2(1021.9997, 995.1173)
+scale = Vector2(7.255212, 0.22959176)
+texture = ExtResource("1_1bhv4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(404, 948.75)
+scale = Vector2(5.4374995, 0.8046863)
+texture = SubResource("GradientTexture2D_x0rnm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_1bhv4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(1091, 957.00006)
+rotation = -0.24242845
+scale = Vector2(5.4374995, 0.8046863)
+texture = SubResource("GradientTexture2D_x0rnm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_1bhv4")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_x0rnm")]
 position = Vector2(854, 556)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+offset = Vector2(0, -100)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="PointLight_Direct2" type="PointLight2D" parent="Parallax2D"]
+position = Vector2(763.1466, -2327.0989)
+rotation = 0.24841562
+scale = Vector2(0.7088614, 2.9670043)
+color = Color(0.61757445, 0.53290313, 0.31193313, 1)
+energy = 0.72
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 0.5
+texture = ExtResource("3_nm44g")
+offset = Vector2(0, 768)
+texture_scale = 3.0
+
+[node name="PointLight_Direct" type="PointLight2D" parent="Parallax2D"]
+position = Vector2(1677.0001, -2444)
+rotation = 0.24841562
+scale = Vector2(1.4446822, 2.9670043)
+color = Color(0.61757445, 0.53290313, 0.31193313, 1)
+energy = 0.72
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 0.5
+texture = ExtResource("3_nm44g")
+offset = Vector2(0, 768)
+texture_scale = 3.0
+
+[node name="PointLight_Direct3" type="PointLight2D" parent="Parallax2D"]
+position = Vector2(2786.9998, -2421.0002)
+rotation = 0.24841562
+scale = Vector2(1.0421149, 2.9670043)
+color = Color(0.61757445, 0.53290313, 0.31193313, 1)
+energy = 0.72
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 0.5
+texture = ExtResource("3_nm44g")
+offset = Vector2(0, 768)
+texture_scale = 3.0
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.7, 0.7)
+
+[node name="PointLight_Direct3" type="PointLight2D" parent="Parallax2D4"]
+position = Vector2(1816.2155, -2379.625)
+rotation = 0.24841562
+scale = Vector2(1.0956031, 2.9670045)
+color = Color(0.7211785, 0.60233426, 0.38652867, 1)
+energy = 0.92
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 0.5
+texture = ExtResource("3_nm44g")
+offset = Vector2(0, 768)
+texture_scale = 3.0
+
+[node name="PointLight_Direct4" type="PointLight2D" parent="Parallax2D4"]
+position = Vector2(698.4636, -2401.0205)
+rotation = 0.24841562
+scale = Vector2(0.9106691, 2.9670045)
+color = Color(0.7211785, 0.60233426, 0.38652867, 1)
+energy = 0.92
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 0.5
+texture = ExtResource("3_nm44g")
+offset = Vector2(0, 768)
+texture_scale = 3.0
+
+[node name="PointLight_Direct5" type="PointLight2D" parent="Parallax2D4"]
+position = Vector2(3124, -2361)
+rotation = 0.24841562
+scale = Vector2(0.9106691, 2.9670045)
+color = Color(0.7211785, 0.60233426, 0.38652867, 1)
+energy = 0.92
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 0.5
+texture = ExtResource("3_nm44g")
+offset = Vector2(0, 768)
+texture_scale = 3.0
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-964.00006, 227)
+scale = Vector2(18.671875, 48.718754)
+texture = SubResource("GradientTexture2D_x0rnm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_1bhv4")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(3007, 227)
+scale = Vector2(18.671875, 48.718754)
+texture = SubResource("GradientTexture2D_x0rnm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D5/StaticBody2D"]
+shape = SubResource("RectangleShape2D_1bhv4")
