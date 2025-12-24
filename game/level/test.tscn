@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cil2vjwrmwraf"]
+[gd_scene load_steps=4 format=3 uid="uid://cil2vjwrmwraf"]
 
 [ext_resource type="Script" uid="uid://b4re6rlax8bcf" path="res://script/scene/test.gd" id="1_dlp0f"]
 [ext_resource type="PackedScene" uid="uid://dgprbfgdg1vyl" path="res://prefab/popmart.tscn" id="2_8abgs"]
+[ext_resource type="PackedScene" uid="uid://ccikim0arjpfa" path="res://level/forest.tscn" id="3_sywkh"]
 
 [node name="Test" type="Node"]
 script = ExtResource("1_dlp0f")
 
 [node name="popmart" parent="." instance=ExtResource("2_8abgs")]
+visible = false
 position = Vector2(475, 13.999939)
+scale = Vector2(0.7, 0.7)
+
+[node name="forest" parent="." instance=ExtResource("3_sywkh")]
+position = Vector2(245.00003, 866)
 scale = Vector2(0.7, 0.7)

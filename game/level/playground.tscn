@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dinis4sfqx66q"]
+
+[ext_resource type="PackedScene" uid="uid://bva3kjbyey4ve" path="res://prefab/Player.tscn" id="1_x0rnm"]
+
+[sub_resource type="Gradient" id="Gradient_7swuj"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x0rnm"]
+gradient = SubResource("Gradient_7swuj")
+fill_from = Vector2(1, 0.54273504)
+fill_to = Vector2(1, 0.54273504)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bhv4"]
+size = Vector2(64, 64)
+
+[node name="Playground" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(971, 1003.75)
+scale = Vector2(31.28125, 2.554687)
+texture = SubResource("GradientTexture2D_x0rnm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_1bhv4")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_x0rnm")]
+position = Vector2(854, 556)

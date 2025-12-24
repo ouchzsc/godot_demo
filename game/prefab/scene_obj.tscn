@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1w1l3n7u2j6y"]
+
+[ext_resource type="Texture2D" uid="uid://xlm633f7ojf2" path="res://image/forest/tree3.png" id="1_nuwn2"]
+[ext_resource type="Texture2D" uid="uid://dxpfakvf3ey2b" path="res://image/forest/tree3_n.png" id="2_7kn2o"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4smmf"]
+diffuse_texture = ExtResource("1_nuwn2")
+normal_texture = ExtResource("2_7kn2o")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nuwn2"]
+polygon = PackedVector2Array(-20, 1, 478, 0, 477, 33, 0, 32)
+
+[node name="SceneObj" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_nuwn2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_4smmf")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(-65, 9)
+occluder = SubResource("OccluderPolygon2D_nuwn2")

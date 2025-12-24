@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqemm3baliicy"]
+
+[ext_resource type="Texture2D" uid="uid://cfi2k88l8s1js" path="res://image/forest/stone5.png" id="1_hy5w4"]
+[ext_resource type="Texture2D" uid="uid://60avi74e74m2" path="res://image/forest/stone5_n.png" id="2_tbm8e"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cnug8"]
+diffuse_texture = ExtResource("1_hy5w4")
+normal_texture = ExtResource("2_tbm8e")
+
+[node name="Stone5" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_cnug8")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk887uod24rb4"]
+
+[ext_resource type="Texture2D" uid="uid://cvgaoucil5cty" path="res://image/forgotten_forest_example_tileset.png" id="1_yrn45"]
+[ext_resource type="Texture2D" uid="uid://brysovgh1ww06" path="res://image/light/pointLight.webp" id="2_eobag"]
+
+[node name="CampFire" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(10, 10)
+texture = ExtResource("1_yrn45")
+offset = Vector2(0, -11)
+region_enabled = true
+region_rect = Rect2(544.19556, 266.20947, 29.794556, 23.682861)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.9254902, 0.5764706, 0.16862746, 1)
+energy = 2.79
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 0.9
+texture = ExtResource("2_eobag")
+texture_scale = 2.98
+height = 10.0

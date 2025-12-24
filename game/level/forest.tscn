@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://ccikim0arjpfa"]
+
+[ext_resource type="PackedScene" uid="uid://d1w1l3n7u2j6y" path="res://prefab/scene_obj.tscn" id="1_cyjpo"]
+[ext_resource type="Texture2D" uid="uid://cvxa0vcqaaotj" path="res://image/white.png" id="1_ilcji"]
+[ext_resource type="PackedScene" uid="uid://bqemm3baliicy" path="res://prefab/stone_5.tscn" id="3_rqomj"]
+[ext_resource type="Texture2D" uid="uid://b26axhwr6cvd2" path="res://image/light/light_stream.jpg" id="4_q5vb7"]
+[ext_resource type="Texture2D" uid="uid://wyvtvy8elrpk" path="res://image/forest/tree2.png" id="5_6yxhl"]
+[ext_resource type="Texture2D" uid="uid://cfi2k88l8s1js" path="res://image/forest/stone5.png" id="6_6op3f"]
+[ext_resource type="PackedScene" uid="uid://bk887uod24rb4" path="res://prefab/camp_fire.tscn" id="7_q5vb7"]
+[ext_resource type="Texture2D" uid="uid://dmfxw53m1rwag" path="res://image/forest/grass6.png" id="7_qtl7f"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rqomj"]
+light_mode = 1
+
+[node name="forest" type="Node2D"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.29035345, 0.2903535, 0.2903534, 1)
+
+[node name="BG" type="Sprite2D" parent="."]
+modulate = Color(0.1254902, 0.1882353, 0.3882353, 1)
+position = Vector2(0, -568)
+scale = Vector2(22.240004, 9.279999)
+texture = ExtResource("1_ilcji")
+
+[node name="Tree1" parent="." instance=ExtResource("1_cyjpo")]
+position = Vector2(64, -442)
+
+[node name="Stone5" parent="." instance=ExtResource("3_rqomj")]
+position = Vector2(661, -168)
+
+[node name="tree" type="Sprite2D" parent="."]
+position = Vector2(1777, -471)
+texture = ExtResource("5_6yxhl")
+
+[node name="stone" type="Sprite2D" parent="."]
+position = Vector2(1093, -175)
+texture = ExtResource("6_6op3f")
+
+[node name="stone2" type="Sprite2D" parent="."]
+position = Vector2(1817, -88)
+texture = ExtResource("7_qtl7f")
+
+[node name="FG" type="Sprite2D" parent="."]
+modulate = Color(0.12773594, 0.12773594, 0.12773594, 1)
+material = SubResource("CanvasItemMaterial_rqomj")
+position = Vector2(6, 1526)
+scale = Vector2(22.240004, 9.279999)
+texture = ExtResource("1_ilcji")
+
+[node name="CampFire" parent="." instance=ExtResource("7_q5vb7")]
+position = Vector2(339, -10)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+rotation = -0.32624865
+scale = Vector2(0.99999994, 0.99999994)
+energy = 0.47
+shadow_enabled = true
+shadow_filter = 2
+height = 0.45
+
+[node name="PointLight_Direct" type="PointLight2D" parent="."]
+position = Vector2(2000.0001, -2364.9998)
+rotation = 0.24841562
+scale = Vector2(1.1759424, 2.9670043)
+color = Color(0.62183684, 0.6188451, 0.6175611, 1)
+energy = 2.84
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 0.5
+texture = ExtResource("4_q5vb7")
+offset = Vector2(0, 768)
+texture_scale = 3.0
+
+[node name="CampFire2" parent="." instance=ExtResource("7_q5vb7")]
+position = Vector2(2235, -5)
