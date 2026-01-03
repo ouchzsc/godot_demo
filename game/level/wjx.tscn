@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://bepymmwrrkvbc"]
+
+[ext_resource type="Texture2D" uid="uid://cvxa0vcqaaotj" path="res://image/white.png" id="1_7ptj4"]
+[ext_resource type="Texture2D" uid="uid://wyvtvy8elrpk" path="res://image/forest/tree2.png" id="2_lgef3"]
+[ext_resource type="Texture2D" uid="uid://cowtawhx1ifsn" path="res://image/forest/cao3.png" id="2_q0wao"]
+[ext_resource type="Texture2D" uid="uid://cfi2k88l8s1js" path="res://image/forest/stone5.png" id="3_jvaow"]
+[ext_resource type="Texture2D" uid="uid://cpuqp7v30gcqb" path="res://image/forest/tree4.png" id="3_q0wao"]
+[ext_resource type="Texture2D" uid="uid://xlm633f7ojf2" path="res://image/forest/tree3.png" id="3_xaln1"]
+[ext_resource type="Texture2D" uid="uid://bhnbinfhhn7r5" path="res://image/forest/cao1.png" id="6_jvaow"]
+[ext_resource type="Texture2D" uid="uid://bn38gunbsnp1e" path="res://image/forest/cao2.png" id="8_w0at0"]
+[ext_resource type="PackedScene" uid="uid://bva3kjbyey4ve" path="res://prefab/Player.tscn" id="9_w0at0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0at0"]
+size = Vector2(354.53253, 44.679794)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, 555)
+scale = Vector2(0.5, 0.5)
+
+[node name="Tree4" type="Sprite2D" parent="."]
+position = Vector2(3566, 638)
+scale = Vector2(0.6962264, 0.70922387)
+texture = ExtResource("3_q0wao")
+
+[node name="Tree2" type="Sprite2D" parent="."]
+position = Vector2(312, 506)
+texture = ExtResource("2_lgef3")
+
+[node name="Tree3" type="Sprite2D" parent="."]
+position = Vector2(2072, 514)
+texture = ExtResource("3_xaln1")
+
+[node name="Stone5" type="Sprite2D" parent="."]
+position = Vector2(994, 786)
+texture = ExtResource("3_jvaow")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("9_w0at0")]
+position = Vector2(266, 390)
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(0, -220)
+zoom = Vector2(1.91, 1.91)
+
+[node name="Sprite2D_caoBg" type="Sprite2D" parent="."]
+modulate = Color(0.039215688, 0.3372549, 0.46666667, 1)
+position = Vector2(1912.5, 1014.5)
+scale = Vector2(9.9453125, 0.41515157)
+texture = ExtResource("1_7ptj4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D_caoBg"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D_caoBg/StaticBody2D"]
+position = Vector2(0.18682861, -4.1586914)
+scale = Vector2(1.0866005, 6.6016507)
+shape = SubResource("RectangleShape2D_w0at0")
+
+[node name="Node2D_Grass" type="Node2D" parent="."]
+
+[node name="Sprite2D_cao" type="Sprite2D" parent="Node2D_Grass"]
+position = Vector2(671, 925)
+texture = ExtResource("2_q0wao")
+
+[node name="Sprite2D_cao2" type="Sprite2D" parent="Node2D_Grass"]
+position = Vector2(3218, 926)
+texture = ExtResource("2_q0wao")
+
+[node name="Sprite2D2_cao" type="Sprite2D" parent="Node2D_Grass"]
+position = Vector2(1944, 924)
+texture = ExtResource("2_q0wao")
+
+[node name="Cao1" type="Sprite2D" parent="."]
+modulate = Color(0.22670749, 0.22670749, 0.22670746, 1)
+position = Vector2(1684, 1018)
+texture = ExtResource("6_jvaow")
+
+[node name="Cao2" type="Sprite2D" parent="."]
+position = Vector2(3168, 940)
+texture = ExtResource("8_w0at0")

@@ -60,7 +60,7 @@ shadow_filter = 2
 height = 0.45
 
 [node name="PointLight_Direct" type="PointLight2D" parent="."]
-position = Vector2(2000.0001, -2364.9998)
+position = Vector2(953.00006, -3374)
 rotation = 0.24841562
 scale = Vector2(1.1759424, 2.9670043)
 color = Color(0.62183684, 0.6188451, 0.6175611, 1)
